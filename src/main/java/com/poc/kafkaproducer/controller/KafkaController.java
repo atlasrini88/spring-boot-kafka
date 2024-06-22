@@ -18,5 +18,11 @@ public class KafkaController {
         kafkaProducer.sendMessage(message);
         return "Message sent to Kafka topic!";
     }
+
+    @PostMapping("/v2/send")
+    public String sendMessage(@RequestParam("key") String key, @RequestParam("message") String message) {
+        kafkaProducer.sendMessage(key, message);
+        return "Message sent successfully to kafka topic";
+    }
 }
 
