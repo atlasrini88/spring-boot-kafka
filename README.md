@@ -1,9 +1,21 @@
 # spring-boot-kafka-consumer
+Spring Boot application with Kafka is a Kafka Producer application to send the messages to the kafka topic.
+
+## Table of Contents
+
+- [Installation - Kafka](#kafka-installation)
+- [Installation - Kafka Producer](#kafka-installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
 
 
--- Install Docker Desktop and install kafka and zookeeper
 
--- 1. Create docker-compose.yaml file with script to create kafka and zookeeper
+## Installation - Kafka
+
+- Pre-requisite: Install Docker Desktop in you local
+
+1. Download the docker-compose.yaml file from project folder or copy from below to install kafka and zookeeper in docker.
+```
 version: '3'
 services:
   zookeeper:
@@ -28,29 +40,28 @@ services:
       - zookeeper
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
--- 2. Run Docker Compose to start zookeeper and kafka
+```
+2. Run Docker Compose to start zookeeper and kafka
 docker-compose up -d
 
--- 3. Verify Kafka and Zookeeper:
+3. Verify Kafka and Zookeeper:
 docker-compose logs kafka
 docker-compose logs zookeeper
 
--- 4. Interacting with Kafka:
-	-- 4a. Creating a Topic:
+4. Interacting with Kafka:
+   4a. Creating a Topic:
 	docker exec -it local_kafka kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
-	-- 4b. Listing Topics:
+   4b. Listing Topics:
 	docker exec -it local_kafka kafka-topics.sh --list --bootstrap-server localhost:9092
 
-	-- 4c. Produce messages:
+   4c. Produce messages:
 	docker exec -it local_kafka kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092
 
-	-- Open new teminal for consumer
-	-- Consuming Messages:
+   4d. Consuming Messages: Open new teminal for consumer
 	docker exec -it local_kafka kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server localhost:9092
 
--- 5. Stopping and Removing Containers:
+5. Stopping and Removing Containers:
 docker-compose down
 
 
