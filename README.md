@@ -5,6 +5,7 @@ Spring Boot application with Kafka is a Kafka Producer application to send messa
 ## Table of Contents
 
 - [Installation - Kafka](#installation---kafka)
+- [Managing Kafka Partitions](#managing-kafka-partitions)
 - [Installation - Kafka Producer and Consumer](#installation---kafka-producer-and-consumer)
 - [Usage](#usage)
 - [Configuration](#configuration)
