@@ -5,7 +5,7 @@ Spring Boot application with Kafka is a Kafka Producer application to send messa
 ## Table of Contents
 
 - [Installation - Kafka](#installation---kafka)
-- [Installation - Kafka Producer](#installation---kafka-producer)
+- [Installation - Kafka Producer and Consumer](#installation---kafka-producer-and-consumer)
 - [Usage](#usage)
 - [Configuration](#configuration)
 
@@ -131,9 +131,33 @@ Spring Boot application with Kafka is a Kafka Producer application to send messa
     kafka-topics.sh --describe --topic my-topic --bootstrap-server localhost:9092
     ```
 
-## Installation - Kafka Producer
+## Installation - Kafka Producer and Consumer
 
-(Provide details for Kafka Producer installation here.)
+**Pre-requisite**: Run Kafka and Zookeeper (please follow the steps provided above).
+
+### Start Kafka Producer Application
+
+1. Go to your project folder and clone the project to your preferred folder:
+
+    ```bash
+    git clone https://github.com/atlasrini88/spring-boot-kafka-producer.git
+    ```
+
+2. Import the project to your IDE (e.g., IntelliJ).
+
+3. Start the producer application.
+
+### Start Kafka Consumer Application
+
+1. Go to your project folder and clone the project to your preferred folder:
+
+    ```bash
+    git clone https://github.com/atlasrini88/spring-boot-kafka-consumer.git
+    ```
+
+2. Import the project to your IDE (e.g., IntelliJ).
+
+3. Start the consumer application.
 
 ## Usage
 
